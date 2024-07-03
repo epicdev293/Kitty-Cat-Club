@@ -28,7 +28,7 @@ body {
   background-color: #404040;
   border: none;
   border-radius: 10px 0px 0px 10px;
-  width: 27em;
+  width: 30em;
   text-align: center;
   color: #ffffff;
   transition: width 0.3s ease;
@@ -42,7 +42,7 @@ body {
 }
 
 #searchbar:focus {
-  width: 31em;
+  width: 30em;
   border: none;
 }
 
@@ -61,6 +61,7 @@ body {
 
 #searchbtn:hover {
   background: #242424;
+  cursor: pointer;
 }
 
 .browserbtn {
@@ -80,6 +81,8 @@ body {
 }
 .browserbtn:hover {
   background: #303030;
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .search-pack {

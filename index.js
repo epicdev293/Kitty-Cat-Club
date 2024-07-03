@@ -2,7 +2,7 @@ import express from "express";
 import http from "node:http";
 import path from "path";
 import ejs from "ejs";
-import createBareServer from "@tomphttp/bare-server-node";
+import { createBareServer } from "@tomphttp/bare-server-node";
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -48,12 +48,32 @@ app.get('/mobile', (req, res) => {
   res.render('mobile',  { title: "Mobile" });
 });
 
-app.get('/testing', (req, res) => {
-  res.render('partials/testing');
+app.get('/skibiditoilet12549s', (req, res) => {
+  res.render('extra/testing');
+});
+
+app.get('/dashboard', (req, res) => {
+  res.render('dashboard', { title: "Dashboard" });
+});
+// TM SUPPORT DO NOT REMOVE
+app.get('/sp/:url', (req, res) => {
+  res.render('tm', { url: req.params.url });
+});
+
+app.get('/teachers', (req, res) => {
+  res.render('teachers');
 });
 
 app.get('/tos', (req, res) => {
   res.render('tos');
+});
+
+app.get('/learningMB', (req, res) => {
+  res.render('learningmobile')
+});
+
+app.get('/byod', (req, res) => {
+  res.render('aboutus')
 });
 
 app.use((req, res) => {

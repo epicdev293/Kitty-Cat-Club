@@ -1,6 +1,7 @@
 let searchEngine = localStorage.getItem('searchengine');
 const iframeRes = document.getElementById("result");
 let savedurl = localStorage.getItem("savedURL");
+let savedinputurl;
 if (!searchEngine) {
     searchEngine = "https://www.google.com/search?q="; //Uses Google if no search engine has been selected.
 }
@@ -19,8 +20,9 @@ if (searchbar) {
                 url = 'http://' + url;
             }
             localStorage.setItem("savedURL", __uv$config.prefix + __uv$config.encodeUrl(url));
-            location.reload();
-
+            iframeRes.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+            localStorage.setItem("savedinputurl", url);
+            input.value = url;
         });
     });
 } else {
@@ -33,4 +35,9 @@ function isUrl(val = "") {
 
 document.addEventListener("DOMContentLoaded", function () {
     iframeRes.src = savedurl;
+    if (!localStorage.getItem("savedinputurl")) {
+        input.value = localStorage.getItem("savedinputurlindex");
+    }  {
+        input.value = localStorage.getItem("savedinputurl");
+    }
 });
